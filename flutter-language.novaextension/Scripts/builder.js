@@ -1,29 +1,25 @@
 class FlutterTaskProvider {
 	constructor() {}
 	
-	resolveTaskAction(context) {
-		let action = context.action;
-		let data = context.data;
-		let config = context.config;
+	provideTasks() {
+		let runner = new Task("Execute");
 		
-		if (action != Task.Run) return null;
-		if (data.type != "flutterDebug") return null;
+		let action = new TaskDebugAdapterAction('flutter');
 		
-		let action = new TaskDebugAdapterAction("debugflutter");
-		
-		action.command = "flutter";
-		
-		let args = ["debug_adapter"];
-		let debugArgs = {
+		action.command = "/Users/lacgrant/bin/flutter/bin/flutter";
+		action.args = ["debug_adapter"];
+		action.debugArgs = {
 			"program": "lib/main_testapp.dart",
 			"args": [
 				"--flavor", "communic8Test",
 			]
 		};
-		debugArgs.cwd = nova.path.normalize(nova.path.join(nova.workspace.path, workingDirectory));
-		action.debugArgs = debugArgs;
-		return action;
+		
+		
+		runner.setAction(Task.Run, action);
+		
+		return [runner];	
 	}
 }
 
-module.exports = FlutterTaskProvider();
+module.exports = new FlutterTaskProvider();
