@@ -1,0 +1,28 @@
+{
+    "identifier": "org.rbvea",
+    "name": "flutter-language",
+    "organization": "rbvea",
+    "description": "Dart Support for Nova",
+    "version": "0.1",
+    "categories": ["languages"],
+    "bugs": "https://github.com/LachlanGrant/Nova-Flutter/issues",
+    "main": "main.js",
+    "entitlements": {
+        "process": true,
+        "filesystem": "readonly"
+    },
+    "config": [
+        {
+            "key": "rbvea.flutterlsp.dartexec",
+            "title": "Dart Executable Path",
+            "type": "path",
+            "placeholder": "~/bin/flutter/bin/dart"
+        },
+        {
+            "key": "rbvea.flutterlsp.snapshotpath",
+            "title": "Dart Analysis Server Snapshot",
+            "type": "path",
+            "placeholder": "~/bin/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot"
+        }
+    ]
+}
