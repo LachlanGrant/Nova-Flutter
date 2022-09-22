@@ -6,6 +6,7 @@
     "version": "0.1",
     "categories": ["languages"],
     "bugs": "https://github.com/LachlanGrant/Nova-Flutter/issues",
+    "repository": "https://github.com/LachlanGrant/Nova-Flutter",
     "main": "main.js",
     "entitlements": {
         "process": true,
@@ -24,5 +25,30 @@
             "type": "path",
             "placeholder": "~/bin/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot"
         }
-    ]
+    ],
+    "activationEvents": [
+        "onLanguage:dart",
+        "onWorkspaceContains:pubspec.yaml"
+    ],
+    "debugAdapters": {
+        "debugflutter": {
+            "name": "Flutter",
+            "image": ""
+        }
+    },
+    
+    "taskTemplates": {
+        "flutterDebug": {
+            "name": "Flutter Debug",
+            "description": "Run and debug Flutter app.",
+            "image": "",
+            "tasks": {
+                "run": {
+                    "resolve": "flutter",
+                    "data": {"type": "flutterDebug"}
+                }
+            },
+            "config": []
+        }
+    }
 }
