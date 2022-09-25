@@ -10,9 +10,9 @@ exports.activate = function() {
     
     nova.workspace.onDidAddTextEditor(async (editor) => {
         editor.onWillSave((editor) => {
-          return formatter.format(editor)
+            return formatter.format(editor)
         });
-      });
+    });
 }
 
 exports.deactivate = function() {
