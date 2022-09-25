@@ -33,6 +33,7 @@ class FlutterLanguageServer {
 		
 		let client = new LanguageClient('flutter-language-server', 'Flutter Language Server', serverOptions, clientOptions);
 		
+		this.languageClient = client;
 		try {
 			console.log("Starting Client");
 			client.start();
