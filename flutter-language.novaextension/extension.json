@@ -3,7 +3,7 @@
     "name": "flutter-language",
     "organization": "rbvea",
     "description": "Dart Support for Nova",
-    "version": "0.1",
+    "version": "0.2",
     "categories": ["languages"],
     "bugs": "https://github.com/LachlanGrant/Nova-Flutter/issues",
     "repository": "https://github.com/LachlanGrant/Nova-Flutter",
@@ -18,6 +18,12 @@
             "title": "Dart Executable Path",
             "type": "path",
             "placeholder": "~/bin/flutter/bin/dart"
+        },
+        {
+            "key": "rbvea.flutterlsp.flutterexec",
+            "title": "Flutter Executable Path",
+            "type": "path",
+            "placeholder": "~/bin/flutter/bin/flutter"
         },
         {
             "key": "rbvea.flutterlsp.snapshotpath",
@@ -46,5 +52,23 @@
             },
             "config": []
         }
-    }
+    },
+    "configWorkspace": [
+        {
+            "key": "rbvea.flutterlsp.mainfile",
+            "title": "Main File",
+            "type": "path",
+            "relative": true
+        },
+        {
+            "key": "rbvea.flutterlsp.flavour",
+            "title": "Flavor",
+            "type": "string"
+        }
+    ],
+    "breakpoints": [
+        {
+            "syntax": "dart"
+        }
+    ]
 }
